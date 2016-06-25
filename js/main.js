@@ -1,5 +1,8 @@
 $(function() {
 
+    // On page load, scroll down 1px to prevent video frame displacement
+     $("html,body").scrollTop(1);
+
     // Initialize variables
     var frameNumber = 0,
     playbackConst = 500,
