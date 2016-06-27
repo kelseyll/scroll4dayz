@@ -1,11 +1,16 @@
 $(function() {
 
     // On page load, scroll down 1px to prevent video frame displacement
-     $("html,body").scrollTop(1);
+    $("html,body").scrollTop(1);
+
+    window.setInterval(function(){
+			var scroll = $(window).scrollTop();
+			$('body,html').animate({scrollTop: (scroll + 20)}, 0);
+		}, 100);
 
     // Initialize variables
     var frameNumber = 0,
-    playbackConst = 500,
+    playbackConst = 300,
     setHeight = document.getElementById("set-height"),
     vid = document.getElementById('v0');
 
@@ -28,13 +33,14 @@ $(function() {
         var domheight = $(window).height();
         var viewportheight = $(".background").height();
         var topofpageheight = domheight - viewportheight - 1;
-        if (scrollPosition >= topofpageheight) {
-            $('html, body').animate({scrollTop: '0px'}, 0);
-        }
 
+        if (scrollPosition >= topofpageheight) {
+            $('html, body').animate({scrollTop: '1px'}, 0);
+        }
         // Scroll to bottom at top of DOM
         else if (scrollPosition <= 0) {
-            $('html, body').animate({scrollTop: topofpageheight}, 0);
+            $('html, body').animate({scrollTop: (topofpageheight - 1)}, 0);
         }
+
     });
 });
