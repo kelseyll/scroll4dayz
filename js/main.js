@@ -5,12 +5,12 @@ $(function() {
 
     window.setInterval(function(){
 			var scroll = $(window).scrollTop();
-			$('body,html').animate({scrollTop: (scroll + 20)}, 0);
+			$('body,html').animate({scrollTop: (scroll + 50)}, 0);
 		}, 100);
 
     // Initialize variables
     var frameNumber = 0,
-    playbackConst = 300,
+    playbackConst = 1000,
     setHeight = document.getElementById("set-height"),
     vid = document.getElementById('v0');
 
