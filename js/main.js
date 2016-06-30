@@ -10,7 +10,7 @@ $(function() {
 
     // Initialize variables
     var frameNumber = 0,
-    playbackConst = 1000,
+    playbackConst = 500,
     setHeight = document.getElementById("set-height"),
     vid = document.getElementById('v0');
 
